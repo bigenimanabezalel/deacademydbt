@@ -14,12 +14,14 @@ models:
                 values: ['1','2','3','4','5']
                 config:
                   severity: warn
-          
+      - name: emp_salary
+        data_tests:
+          - salary_check
           
 
 sources:
   - name: employee
-    database: BDT_DB
+    database: DBT_DB
     schema:   PUBLIC
     tables: 
 

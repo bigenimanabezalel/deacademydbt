@@ -1,7 +1,9 @@
 
 {{
     config 
-    (materialized = 'table')
+    (
+        materialized = 'table'
+    )
 }}
 
 with customer_src as 
@@ -16,7 +18,7 @@ with customer_src as
         CREATED_AT,
         CURRENT_TIMESTAMP AS INSERT_DTS
 
-    FROM {{source('customer','CUSTOMER_SRC') }} ----DBT_DB.PUBLIC.CUSTOMER_SRC
+    FROM {{source('customer','CUSTOMER_SRC') }} --DBT_DB.PUBLIC.CUSTOMER_SRC
 )
 
-SELECT * FROM customer_src
+SELECT * FROM customer_src;

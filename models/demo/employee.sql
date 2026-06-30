@@ -18,8 +18,7 @@ select
     split_part(ADDRESS,',',2) as emp_city,
     split_part(ADDRESS,',',3) as emp_country,
     split_part(ADDRESS,',',4) as emp_zipcode
-from  
-   {{source('employee','EMPLOYEE_RAW')}} --dbt_db.public.employee_raw
-) 
+from  {{source('employee','EMPLOYEE_RAW')}} 
+)
 
 select * from employee
